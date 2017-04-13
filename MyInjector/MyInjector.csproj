@@ -41,10 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Container.cs" />
-    <Compile Include="Lifecycle.cs" />
+    <Compile Include="ILifecycleManager.cs" />
+    <Compile Include="LifecycleManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisteredTypeNotFoundException.cs" />
     <Compile Include="Registration.cs" />
+    <Compile Include="SingletonLifecycleManager.cs" />
+    <Compile Include="TransientLifecycleManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -14,7 +14,7 @@ namespace MyInjector.Tests
         }
 
         [Fact]
-        public void ShouldRegisterImplementationToInterfaceWithDefaultLifecycle_Transient()
+        public void ShouldRegisterImplementationToInterfaceWithDefaultLifecycleTransient()
         {
             var container = new Container();
             container.Register<IAmATestInterface, ImplementationTest>();
@@ -24,20 +24,20 @@ namespace MyInjector.Tests
         }
 
         [Fact]
-        public void ShouldRegisterImplementationToInterfaceWithSpecifiedLifecycle_Transient()
+        public void ShouldRegisterImplementationToInterfaceWithSpecifiedLifecycleTransient()
         {
             var container = new Container();
-            container.Register<IAmATestInterface, ImplementationTest>(Lifecycle.Transient);
+            container.Register<IAmATestInterface, ImplementationTest>(new TransientLifecycleManager());
             var firstInstanceClass = container.Resolve<IAmATestInterface>();
             var secondInstanceClass = container.Resolve<IAmATestInterface>();
             Assert.NotSame(firstInstanceClass, secondInstanceClass);
         }
 
         [Fact]
-        public void ShouldRegisterImplementationToInterfaceWithSpecifiedLifecycle_Singelton()
+        public void ShouldRegisterImplementationToInterfaceWithSpecifiedLifecycleSingelton()
         {
             var container = new Container();
-            container.Register<IAmATestInterface, ImplementationTest>(Lifecycle.Singleton);
+            container.Register<IAmATestInterface, ImplementationTest>(new SingletonLifecycleManager());
             var firstInstanceReference = container.Resolve<IAmATestInterface>();
             var secondInstanceReference = container.Resolve<IAmATestInterface>();
             Assert.Same(firstInstanceReference, secondInstanceReference);
