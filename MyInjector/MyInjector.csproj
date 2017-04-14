@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Container.cs" />
+    <Compile Include="IContainer.cs" />
     <Compile Include="ILifecycleManager.cs" />
     <Compile Include="LifecycleManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

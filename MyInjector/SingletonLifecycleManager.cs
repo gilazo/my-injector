@@ -2,9 +2,9 @@
 {
     public class SingletonLifecycleManager : LifecycleManager
     {
-        public override object GetImplementationInstance(Container container, Registration registration)
+        public override object GetImplementationInstance(IContainer container, Registration registration)
         {
-            if (registration.ImplementationType != null)
+            if (registration.ImplementationInstance != null)
             {
                 return registration.ImplementationInstance;
             }

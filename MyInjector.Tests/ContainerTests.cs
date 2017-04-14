@@ -71,18 +71,5 @@ namespace MyInjector.Tests
                 Assert.Throws<RegisteredTypeNotFoundException>(() => container.Resolve<IAmAParameterTestInterface>());
             Assert.Equal($"Cannot find a registration for type {typeof(IAmATestInterface)}", exception.Message);
         }
-    }
-
-    public interface IAmATestInterface { }
-    public class ImplementationTest : IAmATestInterface { }
-    public interface IAmAnothertestInterface { }
-    public class ImplementationOfAnotherTest : IAmAnothertestInterface { }
-    public interface IAmAParameterTestInterface { }
-    public class ParameterImplementationTest : IAmAParameterTestInterface
-    {
-        public ParameterImplementationTest(IAmATestInterface implementationTest,
-            IAmAnothertestInterface implementationOfAnotherTest)
-        {
-        }
-    }
+    }   
 }
