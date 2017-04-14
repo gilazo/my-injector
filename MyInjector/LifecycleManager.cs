@@ -5,7 +5,7 @@ namespace MyInjector
 {
     public abstract class LifecycleManager : ILifecycleManager
     {        
-        public object InitializeImplementation(Container container, Type type)
+        protected object InitializeImplementation(IContainer container, Type type)
         {
             var constructor = type.GetConstructors().First();
             var parameters = constructor.GetParameters();
@@ -15,6 +15,6 @@ namespace MyInjector
             return instance;
         }
 
-        abstract public object GetImplementationInstance(Container container, Registration registration);
+        abstract public object GetImplementationInstance(IContainer container, Registration registration);
     }
 }

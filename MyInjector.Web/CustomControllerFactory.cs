@@ -6,9 +6,9 @@ namespace MyInjector.Web
 {
     public class CustomControllerFactory : DefaultControllerFactory
     {
-        private readonly Container _container;
+        private readonly IContainer _container;
 
-        public CustomControllerFactory(Container container)
+        public CustomControllerFactory(IContainer container)
         {
             _container = container;
         }

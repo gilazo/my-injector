@@ -2,6 +2,6 @@
 {
     public interface ILifecycleManager
     {
-        object GetImplementationInstance(Container container, Registration registration);
+        object GetImplementationInstance(IContainer container, Registration registration);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MyInjector
 {
-    public sealed class Container
+    public sealed class Container : IContainer
     {
         private readonly IDictionary<Type, Registration> _registrations;
 

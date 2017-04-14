@@ -2,7 +2,7 @@
 {
     public class TransientLifecycleManager : LifecycleManager
     {
-        public override object GetImplementationInstance(Container container, Registration registration)
+        public override object GetImplementationInstance(IContainer container, Registration registration)
         {
             var newInstance = InitializeImplementation(container, registration.ImplementationType);
             return newInstance;
