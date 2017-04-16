@@ -5,7 +5,7 @@ namespace MyInjector
 {
     public sealed class Container : IContainer
     {
-        private readonly IDictionary<Type, Registration> _registrations;
+        private readonly Dictionary<Type, Registration> _registrations;
 
         public Container()
         {
